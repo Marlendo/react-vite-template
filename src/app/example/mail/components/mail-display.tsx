@@ -25,7 +25,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { type Mail } from "@/app/mail/data";
+import { type Mail } from "@/app/example/mail/data";
 import { useState } from "react";
 
 interface MailDisplayProps {

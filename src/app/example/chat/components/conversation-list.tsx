@@ -26,7 +26,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu"
-import { useChat, type Conversation } from "@/app/chat/use-chat"
+import { useChat, type Conversation } from "@/app/example/chat/use-chat"
 
 interface ConversationListProps {
   conversations: Conversation[]
