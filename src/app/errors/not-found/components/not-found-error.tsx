@@ -1,9 +1,11 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { useENV } from "@/hooks/use-env"
 import { useNavigate } from "react-router-dom"
 
 export function NotFoundError() {
+  const { DEV } = useENV()
   const navigate = useNavigate()
 
   return (
@@ -19,9 +21,13 @@ export function NotFoundError() {
         <p>The page you are looking for doesn't exist or has been moved to another location.</p>
         <div className='mt-6 flex items-center justify-center gap-4 md:mt-8'>
           <Button className='cursor-pointer' onClick={() => navigate('/dashboard')}>Go Back Home</Button>
-          <Button variant='outline' className='flex cursor-pointer items-center gap-1' onClick={() => navigate('#')}>
-            Contact Us
-          </Button>
+          {
+            DEV && (
+              <Button variant='outline' className='flex cursor-pointer items-center gap-1' onClick={() => navigate('/example')}>
+                Open Example Pages
+              </Button>
+            )
+          }
         </div>
       </div>
     </div>
