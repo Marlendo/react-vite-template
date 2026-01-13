@@ -1,8 +1,5 @@
-"use client"
-
 import { ChevronRight, type LucideIcon } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
-
 import {
   Collapsible,
   CollapsibleContent,

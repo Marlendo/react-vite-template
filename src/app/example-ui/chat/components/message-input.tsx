@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useRef } from "react"
 import {
   Send,
@@ -9,9 +7,7 @@ import {
   FileText,
   Mic,
   MoreHorizontal
-} from "lucide-react"
-
-import { cn } from "@/lib/utils"
+} from "lucide-react"import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import {

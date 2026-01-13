@@ -1,5 +1,3 @@
-"use client"
-
 import { cn, assetUrl } from "@/lib/utils"
 
 interface Image3DProps {

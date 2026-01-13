@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from 'react'
 import { Menu, Github, LayoutDashboard, ChevronDown, X, Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'

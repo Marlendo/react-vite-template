@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
 import { Command as CommandPrimitive } from "cmdk"
@@ -22,7 +20,6 @@ import {
   Palette,
   type LucideIcon,
 } from "lucide-react"
-
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 

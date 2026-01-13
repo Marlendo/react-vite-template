@@ -1,8 +1,4 @@
-"use client"
-
-import { useEffect, useState } from "react"
-
-import { BaseLayout } from "@/components/layouts/base-layout"
+import { useEffect, useState } from "react"import { BaseLayout } from "@/components/layouts/base-layout"
 import { Chat } from "./components/chat"
 import { type Conversation, type Message, type User } from "./use-chat"
 

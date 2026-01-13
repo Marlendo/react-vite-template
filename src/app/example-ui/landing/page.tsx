@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react'
 import { LandingNavbar } from './components/navbar'
 import { HeroSection } from './components/hero-section'

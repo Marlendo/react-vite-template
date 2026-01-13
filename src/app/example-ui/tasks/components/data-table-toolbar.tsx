@@ -1,9 +1,5 @@
-"use client"
-
 import type { Table } from "@tanstack/react-table"
-import { RefreshCcw } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import { RefreshCcw } from "lucide-react"import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
   Select,
@@ -13,9 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { DataTableViewOptions } from "@/app/example-ui/tasks/components/data-table-view-options"
-import { AddTaskModal } from "./add-task-modal"
-
-import { categories, priorities, statuses } from "../data/data"
+import { AddTaskModal } from "./add-task-modal"import { categories, priorities, statuses } from "../data/data"
 import type { Task } from "../data/schema"
 
 interface DataTableToolbarProps<TData> {

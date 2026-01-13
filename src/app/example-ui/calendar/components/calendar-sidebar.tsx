@@ -1,8 +1,4 @@
-"use client"
-
-import { Plus } from "lucide-react"
-
-import { Calendars } from "./calendars"
+import { Plus } from "lucide-react"import { Calendars } from "./calendars"
 import { DatePicker } from "./date-picker"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"

@@ -1,9 +1,5 @@
-"use client"
-
 import { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
-
-import { TooltipProvider } from "@/components/ui/tooltip"
+import { Menu, X } from "lucide-react"import { TooltipProvider } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
 import { ConversationList } from "./conversation-list"
 import { ChatHeader } from "./chat-header"

@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react'
 import { useTheme } from '@/hooks/use-theme'
 import { baseColors } from '@/config/theme-customizer-constants'

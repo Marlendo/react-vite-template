@@ -1,5 +1,3 @@
-"use client"
-
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { useSidebarConfig } from '@/contexts/sidebar-context'

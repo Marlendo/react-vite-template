@@ -1,5 +1,3 @@
-"use client"
-
 import { Card } from '@/components/ui/card'
 
 // Simple icon component for company logos

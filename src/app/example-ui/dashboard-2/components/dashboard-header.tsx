@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Calendar, Clock, RefreshCw, Filter } from "lucide-react"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

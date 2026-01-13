@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import { useENV } from "@/hooks/use-env"
 import { useNavigate } from "react-router-dom"

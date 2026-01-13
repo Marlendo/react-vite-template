@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { 
   ChevronLeft, 
@@ -15,9 +13,7 @@ import {
   Menu,
   Plus
 } from "lucide-react"
-import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isToday, isSameDay } from "date-fns"
-
-import { Button } from "@/components/ui/button"
+import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isToday, isSameDay } from "date-fns"import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Calendar } from "@/components/ui/calendar"

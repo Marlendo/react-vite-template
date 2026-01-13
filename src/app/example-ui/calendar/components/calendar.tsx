@@ -1,5 +1,3 @@
-"use client"
-
 import { CalendarSidebar } from "./calendar-sidebar"
 import { CalendarMain } from "./calendar-main"
 import { EventForm } from "./event-form"

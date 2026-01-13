@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import {
   type ColumnDef,
@@ -14,18 +12,14 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table"
-
-import {
+} from "@tanstack/react-table"import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-
-import { DataTablePagination } from "./data-table-pagination"
+} from "@/components/ui/table"import { DataTablePagination } from "./data-table-pagination"
 import { DataTableToolbar } from "./data-table-toolbar"
 import type { Task } from "../data/schema"
 

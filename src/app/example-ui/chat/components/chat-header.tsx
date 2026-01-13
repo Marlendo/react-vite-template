@@ -1,5 +1,3 @@
-"use client"
-
 import { 
   Phone, 
   Video, 
@@ -9,9 +7,7 @@ import {
   Users,
   Bell,
   BellOff
-} from "lucide-react"
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+} from "lucide-react"import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { 

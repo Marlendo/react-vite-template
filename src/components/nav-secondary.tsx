@@ -1,8 +1,6 @@
 import * as React from "react"
 import { type LucideIcon } from "lucide-react"
-import { Link } from "react-router-dom"
-
-import {
+import { Link } from "react-router-dom"import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarMenu,
