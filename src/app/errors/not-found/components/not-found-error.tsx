@@ -23,7 +23,7 @@ export function NotFoundError() {
           <Button className='cursor-pointer' onClick={() => navigate('/dashboard')}>Go Back Home</Button>
           {
             DEV && (
-              <Button variant='outline' className='flex cursor-pointer items-center gap-1' onClick={() => navigate('/example')}>
+              <Button variant='outline' className='flex cursor-pointer items-center gap-1' onClick={() => navigate('/example-ui')}>
                 Open Example Pages
               </Button>
             )

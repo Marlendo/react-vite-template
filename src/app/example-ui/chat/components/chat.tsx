@@ -9,7 +9,7 @@ import { ConversationList } from "./conversation-list"
 import { ChatHeader } from "./chat-header"
 import { MessageList } from "./message-list"
 import { MessageInput } from "./message-input"
-import { useChat, type Conversation, type Message, type User } from "@/app/example/chat/use-chat"
+import { useChat, type Conversation, type Message, type User } from "@/app/example-ui/chat/use-chat"
 
 interface ChatProps {
   conversations: Conversation[]

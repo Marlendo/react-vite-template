@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import type { Mail } from "@/app/example/mail/data";
-import { mails } from "@/app/example/mail/data";
+import type { Mail } from "@/app/example-ui/mail/data";
+import { mails } from "@/app/example-ui/mail/data";
 
 interface Config {
   selected: Mail["id"] | null;

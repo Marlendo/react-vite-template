@@ -5,9 +5,12 @@ import {
   Search, 
   Pin, 
   VolumeX, 
-  MoreHorizontal,
+  MoreVertical,
   Users,
-  Hash
+  Hash,
+  Settings,
+  UserPlus,
+  Filter
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -23,7 +26,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu"
-import { useChat, type Conversation } from "@/app/example/chat/use-chat"
+import { useChat, type Conversation } from "@/app/example-ui/chat/use-chat"
 
 interface ConversationListProps {
   conversations: Conversation[]
@@ -53,7 +56,7 @@ export function ConversationList({
   selectedConversation, 
   onSelectConversation 
 }: ConversationListProps) {
-  const { searchQuery, setSearchQuery, togglePin, toggleMute } = useChat()
+  const { searchQuery, setSearchQuery } = useChat()
 
   const filteredConversations = conversations.filter((conversation) =>
     conversation.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -78,13 +81,39 @@ export function ConversationList({
 
   return (
     <div className="flex flex-col h-full overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b flex-shrink-0">
+      {/* Header - Hidden on mobile (handled by parent) */}
+      <div className="hidden lg:flex items-center justify-between h-16 px-4 border-b flex-shrink-0">
         <h2 className="text-lg font-semibold">Messages</h2>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0 cursor-pointer"
+            >
+              <MoreVertical className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem className="cursor-pointer">
+              <UserPlus className="h-4 w-4 mr-2" />
+              New Chat
+            </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer">
+              <Filter className="h-4 w-4 mr-2" />
+              Filter Messages
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="cursor-pointer">
+              <Settings className="h-4 w-4 mr-2" />
+              Chat Settings
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
       {/* Search */}
-      <div className="p-4 border-b flex-shrink-0">
+      <div className="px-4 py-3 border-b flex-shrink-0">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
@@ -104,7 +133,7 @@ export function ConversationList({
             <div
               key={conversation.id}
               className={cn(
-                "flex items-center gap-3 p-3 rounded-lg cursor-pointer relative group overflow-hidden hover:bg-accent/50 transition-colors",
+                "flex items-center gap-3 p-3 rounded-lg cursor-pointer relative overflow-hidden hover:bg-accent/50 transition-colors",
                 selectedConversation === conversation.id
                   ? "bg-accent text-accent-foreground"
                   : ""
@@ -143,8 +172,8 @@ export function ConversationList({
               {/* Content */}
               <div className="flex-1 min-w-0 overflow-hidden">
                 <div className="flex items-center justify-between mb-1 min-w-0">
-                  <div className="flex items-center gap-1 min-w-0 flex-1 overflow-hidden">
-                    <h3 className="font-medium truncate min-w-0 max-w-[180px]">{conversation.name}</h3>
+                  <div className="flex items-center gap-1 min-w-0 flex-1 overflow-hidden pr-2">
+                    <h3 className="font-medium truncate min-w-0 max-w-[160px] lg:max-w-[180px]">{conversation.name}</h3>
                     {conversation.isPinned && (
                       <Pin className="h-3 w-3 text-muted-foreground flex-shrink-0" />
                     )}
@@ -152,65 +181,23 @@ export function ConversationList({
                       <VolumeX className="h-3 w-3 text-muted-foreground flex-shrink-0" />
                     )}
                   </div>
-                  <span className="text-xs text-muted-foreground flex-shrink-0 ml-2 whitespace-nowrap">
+                  <span className="text-xs text-muted-foreground flex-shrink-0 whitespace-nowrap">
                     {formatMessageTime(conversation.lastMessage.timestamp)}
                   </span>
                 </div>
                 
                 <div className="flex items-center justify-between gap-2 min-w-0">
-                  <p className="text-sm text-muted-foreground truncate flex-1 min-w-0 max-w-[200px]">
+                  <p className="text-sm text-muted-foreground truncate flex-1 min-w-0 max-w-[180px] lg:max-w-[200px] pr-2">
                     {conversation.lastMessage.content}
                   </p>
                   
                   {/* Unread count */}
                   {conversation.unreadCount > 0 && (
-                    <Badge variant="default" className="ml-2 min-w-[20px] h-5 text-xs cursor-pointer flex-shrink-0">
+                    <Badge variant="default" className="min-w-[20px] h-5 text-xs cursor-pointer flex-shrink-0">
                       {conversation.unreadCount > 99 ? "99+" : conversation.unreadCount}
                     </Badge>
                   )}
                 </div>
-              </div>
-
-              {/* Actions menu */}
-              <div className="opacity-0 group-hover:opacity-100 ml-2 flex-shrink-0">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-8 w-8 p-0 cursor-pointer"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <MoreHorizontal className="h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem 
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        togglePin(conversation.id)
-                      }}
-                      className="cursor-pointer"
-                    >
-                      <Pin className="h-4 w-4 mr-2" />
-                      {conversation.isPinned ? "Unpin" : "Pin"}
-                    </DropdownMenuItem>
-                    <DropdownMenuItem 
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        toggleMute(conversation.id)
-                      }}
-                      className="cursor-pointer"
-                    >
-                      <VolumeX className="h-4 w-4 mr-2" />
-                      {conversation.isMuted ? "Unmute" : "Mute"}
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem className="cursor-pointer text-destructive">
-                      Delete conversation
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
               </div>
             </div>
           ))}

@@ -159,7 +159,6 @@ export function ThemeCustomizerTrigger({ onClick }: { onClick: () => void }) {
   const { config: sidebarConfig } = useSidebarConfig()
 
   const env = import.meta.env
-  console.log(env)
 
   if (env.PROD) {
     return null

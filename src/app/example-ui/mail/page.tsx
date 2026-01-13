@@ -1,5 +1,5 @@
-import { Mail } from "@/app/example/mail/components/mail"
-import { accounts, mails } from "@/app/example/mail/data"
+import { Mail } from "@/app/example-ui/mail/components/mail"
+import { accounts, mails } from "@/app/example-ui/mail/data"
 import { BaseLayout } from "@/components/layouts/base-layout"
 
 export default function MailPage() {
