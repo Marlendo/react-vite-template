@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { BaseLayout } from "@/components/layouts/base-layout"
 import { StatCards } from "./components/stat-cards"
-import { DataTable } from "./components/data-table"import initialUsersData from "./data.json"
+import { DataTable } from "./components/data-table"
+import initialUsersData from "./data.json"
 
 interface User {
   id: number

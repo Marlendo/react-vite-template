@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Plus } from "lucide-react"
-import { z } from "zod"import { Button } from "@/components/ui/button"
+import { z } from "zod"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -18,7 +19,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"import { priorities, statuses, categories } from "../data/data"
+} from "@/components/ui/select"
+import { priorities, statuses, categories } from "../data/data"
 import type { Task } from "../data/schema"
 
 // Extended task schema for the form

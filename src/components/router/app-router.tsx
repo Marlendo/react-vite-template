@@ -1,9 +1,8 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { routes, type RouteConfig } from '@/config/routes'
-import { routes as routesExample } from '@/config/example.routes'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
-import { useENV } from '@/hooks/use-env'
+// import { useENV } from '@/hooks/use-env'
 
 function renderRoutes(routeConfigs: RouteConfig[]) {
   return routeConfigs.map((route, index) => (
@@ -22,20 +21,27 @@ function renderRoutes(routeConfigs: RouteConfig[]) {
 }
 
 export function AppRouter() {
+  const isDev = import.meta.env.DEV;
 
-  const { DEV } = useENV();
+  if (isDev) {
+    const [devRoutes, setDevRoutes] = useState<any[]>([]);
 
-  if (DEV) {
+    useEffect(() => {
+      import("@/config/example.routes").then((m) => {
+        setDevRoutes(m.routes);
+      });
+    }, []);
+
     return (
       <Routes>
-        {renderRoutes([...routes, ...routesExample])}
+        {renderRoutes([...routes, ...devRoutes])}
       </Routes>
-    )
+    );
   }
 
   return (
     <Routes>
       {renderRoutes(routes)}
     </Routes>
-  )
+  );
 }

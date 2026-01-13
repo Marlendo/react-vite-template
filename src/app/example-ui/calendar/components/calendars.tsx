@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Check, ChevronRight, Plus, Eye, EyeOff, MoreHorizontal } from "lucide-react"import {
+import { Check, ChevronRight, Plus, Eye, EyeOff, MoreHorizontal } from "lucide-react"
+import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,

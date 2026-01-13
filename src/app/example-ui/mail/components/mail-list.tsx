@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react"
-import { formatDistanceToNow } from "date-fns"import { cn } from "@/lib/utils"
+import { formatDistanceToNow } from "date-fns"
+import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import type { Mail } from "@/app/example-ui/mail/data"

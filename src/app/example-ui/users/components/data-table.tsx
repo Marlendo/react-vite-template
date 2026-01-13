@@ -20,7 +20,8 @@ import {
   Trash2,
   Download,
   Search,
-} from "lucide-react"import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+} from "lucide-react"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"

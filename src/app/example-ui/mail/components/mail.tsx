@@ -11,7 +11,8 @@ import {
   ShoppingCart,
   Trash2,
   Users2,
-} from "lucide-react"import { cn } from "@/lib/utils"
+} from "lucide-react"
+import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable"
 import { Separator } from "@/components/ui/separator"

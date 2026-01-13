@@ -100,6 +100,8 @@ export function useThemeManager() {
       root.style.setProperty(`--${key}`, value)
     })
 
+    console.log(styles)
+
     // Update brand colors values when theme changes
     updateBrandColorsFromTheme(styles)
   }, [resetTheme, updateBrandColorsFromTheme])
